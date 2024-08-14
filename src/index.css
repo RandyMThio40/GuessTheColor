@@ -1,12 +1,15 @@
+
+
 html,body {
   width:100vw;
-  height:100%;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: #9f9f9f;
+  background-color: #151515;
+  /* background: rgb(255,255,255); */
+  /* background-image: radial-gradient(circle, rgba(255,255,255,1) 0%, var(--game-color) 3%,rgba(0,212,255,0) 40%, rgba(0,212,255,0) 100%);  */
 }
 
 code {

@@ -1,5 +1,8 @@
 :root{
     --game-color:transparent;
+    --x:0;
+    --y:0;
+    --clip-value:0%;
 }
 .color-window,
 .color-options{
@@ -8,17 +11,22 @@
 }
 
 .color-window{
+    width: 400px;
     height:400px;
     background-color: var(--game-color);
-    border:1px solid rgba(0, 0, 0, 0.5);
-    border-radius:0.5rem;
+    /* border:1px solid rgba(0, 0, 0, 0.5); */
+    box-shadow: 0 0 40px 10px var(--game-color);
+    border-radius:50%;
+    z-index: 2;
 }
 
 .color-options{
     display: flex;
     justify-content: space-evenly;
     gap:1rem;
+    color:white;
     font-size: 1.3rem;
+    z-index: 2;
 }
 
 .color-options > button{
@@ -27,14 +35,39 @@
     border:none;
     border-radius: 0.2rem;
     cursor: pointer;
+    background-color: transparent;
+    color:currentColor;
+    border:currentColor solid 1px;
+    border-radius:0.2rem;
     box-shadow:0px 3px 6px rgba(0, 0, 0, 0.5);
+    text-shadow: 0px 3px 6px rgba(0, 0, 0, 0.5);
     transition: box-shadow 200ms ease;
+
 }
+
+.animatedBg{
+    width:100vw;
+    height:100%;
+    position:absolute;
+    top:0;
+    left:0;
+    background-color: red;
+    pointer-events: none;
+    clip-path: circle(var(--clip-value) at var(--x) var(--y));
+    transition: clip-path 0ms ease;
+    z-index: 0;
+
+}
+
 
 .color-options > button:active{
     box-shadow:0px 0px 3px rgba(0, 0, 0, 0.5);
 }
 
 div[scoreboard]{
+    
+    color:rgba(255, 255, 255, 0.7);
+    mix-blend-mode:difference;
     font-size:2rem;
+    z-index: 2;
 }
